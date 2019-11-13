@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Rendering</title>
+    <link href="inc/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container py-5" id="app">
+    <h2 class="text-center text-success">Top ten framework</h2>
+    <ul v-for="(value,framework) of topTenFramework" class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">{{framework}}
+            <span class="badge badge-primary badge-pill">{{value}}</span>
+        </li>
+    </ul>
+</div>
+
+<script src="inc/vue.min.js"></script>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            topTenFramework: {
+                "Asp.Net": 200,
+                "Angular Js" :100,
+                "Asp.Net MVC":95,
+                "Ruby on Ralis":90,
+                "React Js":85,
+                "Django":80,
+                "Laravel":75,
+                "Vue Js":70,
+                "Spring":60,
+                "Express":50
+            }
+        }
+    });
+</script>
+</body>
+</html>

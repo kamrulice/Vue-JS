@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Rendering</title>
+    <link href="inc/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container py-5" id="app">
+    <h2 class="text-center text-success">Top 10 Framework</h2><hr/>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <th>Framework</th>
+            <th>GitHub Scores</th>
+            <th>Stack OverFlow Scores</th>
+            <th>Over all Scores</th>
+        </thead>
+        <tbody>
+            <tr v-for="framework of topTenFramework">
+                <td>{{framework.name}}</td>
+                <td>{{framework.gitHub}}</td>
+                <td>{{framework.stactOverFlow}}</td>
+                <td>{{framework.overAll}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script src="inc/vue.min.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            topTenFramework:[
+                {name:"Asp.net",gitHub:100,stactOverFlow:150, overAll:50},
+                {name:"Asp.net MVC",gitHub:100,stactOverFlow:150, overAll:50},
+                {name:"Angular Js",gitHub:100,stactOverFlow:150, overAll:50},
+                {name:"Ruby on Rails",gitHub:100,stactOverFlow:150, overAll:50},
+                {name:"React Js",gitHub:100,stactOverFlow:150, overAll:50},
+                {name:"Djanjo",gitHub:100,stactOverFlow:150, overAll:50},
+                {name:"Vue Js",gitHub:100,stactOverFlow:150, overAll:50},
+                {name:"Laravel",gitHub:200,stactOverFlow:250, overAll:100},
+                {name:"Spring",gitHub:50,stactOverFlow:30, overAll:20},
+                {name:"Express",gitHub:44,stactOverFlow:46, overAll:30},
+
+            ]
+        }
+    });
+</script>
+</body>
+</html>

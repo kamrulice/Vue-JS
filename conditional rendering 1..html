@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conditional Rendering</title>
+    <link href="inc/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container py-5" id="app">
+    <div v-if="show" class="alert alert-success text-center text-dark">You have no any record</div>
+    <button  V-on:click="show=false" class="btn btn-secondary btn-block">Hide message</button>
+</div>
+
+<script src="inc/vue.min.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            show:true
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conditional Rendering</title>
+    <link href="inc/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container py-5" id="app">
+    <div v-if="showAlertSecondary" class="alert alert-secondary">V-if Alert</div>
+    <div v-show="showAlertPrimary" class="alert alert-info">V-show Alert</div>
+    <div>
+        <button V-on:click="showAlertSecondary=!showAlertSecondary" class="btn btn-secondary">Toggle message(V-if)</button>
+        <button v-on:click="showAlertPrimary=!showAlertPrimary" class="btn btn-info">Toggle message(V-show)</button>
+    </div>
+</div>
+<script src="inc/vue.min.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            showAlertSecondary:true,
+            showAlertPrimary:true
+        }
+    });
+</script>
+</body>
+</html>
