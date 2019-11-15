@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue class binding</title>
+    <link href="inc/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .height{
+            min-height: 200px;
+            min-width: 200px;
+            margin-top: 30px;
+        }
+        .hh{
+            padding:102px;
+            font-size:20px ;
+        }
+    </style>
+</head>
+<body>
+<div class="container py-5" id="app">
+    <div class="">
+        <div class="alert alert-primary text-center" :class="alertType">This is primary alert</div>
+    </div><br>
+    <select v-model="alertType" class="form-control">
+        <option value="alert-primary">--Select Any Alert--</option>
+        <option value="alert-primary">Primary</option>
+        <option value="alert-success">Success</option>
+        <option value="alert-info">Info</option>
+        <option value="alert-dark">Dark</option>
+        <option value="alert-secondary">Secondary</option>
+        <option value="alert-danger">Danger</option>
+        <option value="alert-light">Light</option>
+        <option value="alert-warning">Warning</option>
+    </select>
+</div>
+
+<script src="inc/vue.min.js"></script>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+                alertType:'alert-primary'
+        }
+    });
+</script>
+</body>
+</html>

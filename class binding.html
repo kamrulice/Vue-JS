@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue class binding</title>
+    <link href="inc/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .height{
+            min-height: 200px;
+            min-width: 200px;
+            margin-top: 30px;
+        }
+        .hh{
+            padding:102px;
+            font-size:20px ;
+        }
+    </style>
+</head>
+<body>
+<div class="container py-5" id="app">
+    <div class="height" :class="{'bg-dark':!hovered, 'bg-info':hovered}" @mouseover="hovered=true" @mouseout="hovered=false">
+        <h2 class="hh text-center text-light">Mouse hover here</h2>
+    </div>
+</div>
+
+<script src="inc/vue.min.js"></script>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            hovered:true
+        }
+    });
+</script>
+</body>
+</html>
