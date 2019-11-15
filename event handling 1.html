@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Handling</title>
+    <link href="inc/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container py-5" id="app">
+    <h2 class="text-center text-success">Vote your favorite framework</h2><hr/>
+    <ul v-for="framework of favoriteFrameworks" class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">{{framework.name}}
+            <button v-on:click="Upvote(framework)" class="btn btn-outline-success">Upvote
+            <span class="badge badge-primary badge-pill">{{framework.scores}}</span>
+            </button>
+        </li>
+    </ul>
+</div>
+<script src="inc/vue.min.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            favoriteFrameworks:[
+                {name:'Laravel', scores:0},
+                {name:'Vue Js', scores:0},
+                {name:'Angular Js', scores:0},
+                {name:'React Js', scores:0}
+            ]
+        },
+        methods:{
+            Upvote(framework){
+                framework.scores++
+            }
+        }
+    });
+</script>
+</body>
+</html>
